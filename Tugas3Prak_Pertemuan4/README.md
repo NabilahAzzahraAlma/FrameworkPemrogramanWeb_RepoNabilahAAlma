@@ -46,7 +46,7 @@ project-folder/ ├── app/ │ ├── Http/ │ │ ├── Controllers
 -   Akses halaman dibatasi oleh middleware sesuai role.
     PADA LARAVEL 11 (dalam Kolase):
 
-![Screenshot Kolase](screenshots\ss_pert4_FPW.png)
+![Screenshot Kolase](D:\GitHub Repo\FrameworkPemrogramanWeb_RepoNabilahAAlma\Tugas3Prak_Pertemuan4\screenshots\ss_pert4_FPW.png)
 
 > **Catatan:** Folder `screenshots/` berisi hasil tangkapan layar aplikasi yang diambil dari browser dan tampilan kode di VS Code.
 
