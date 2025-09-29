@@ -16,17 +16,20 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-    @include('layouts.navigation')
 
-    <!-- Page Footer -->
+<body class="font-sans antialiased">
+    {{-- Page Footer --}}
+    <footer class="bg-white dark:bg-gray-800 shadow">
+        <p class="text-center py-4">© 2025 UTS Laravel Project</p>
+    </footer>
+    {{-- 
     @isset($footer)
-        <footer class="bg-white dark:bg-gray-800 shadow">
-            <p>© 2025 UTS Laravel Project</p>
+        <footer class="bg-blue dark:bg-gray-900 shadow">
+            <p class="text-center py-4">© 2025 UTS Laravel Project</p>
         </footer>
-    @endisset
+    @endisset --}}
 
-</div>
+    </div>
 </body>
 
 </html>

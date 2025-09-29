@@ -9,39 +9,25 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-{{-- 4. Membuat template blade terpisah untuk header, body, dan footer --}}
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
+
+        {{-- Header --}}
         @include('layouts.header')
 
-        <!-- Page Heading -->
-        @isset($header)
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="container">
-                    @yield('content')
-                </div>
-            </header>
-        @endisset
-
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        {{-- Konten Utama --}}
+        <main class="container mx-auto mt-6">
+            <div class="w-full max-w-2xl mx-auto">
+                @yield('content')
+            </div>
         </main>
-    </div>
-    @include('layouts.footer')
 
-    <!-- Page Content -->
-    <main>
-        {{ $slot }}
-    </main>
+        {{-- Footer --}}
+        @include('layouts.footer')
+
     </div>
 </body>
 
