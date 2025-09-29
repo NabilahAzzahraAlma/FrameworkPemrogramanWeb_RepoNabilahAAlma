@@ -10,18 +10,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('uts', function (Blueprint $table) {
-            $table->id();
+            $table->id('uts_id');
+            $table->string('nama_matkul');
+            $table->integer('jumlah_sks');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
 
+
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('uts');
     }
