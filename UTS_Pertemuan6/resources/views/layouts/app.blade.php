@@ -13,20 +13,18 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
+    {{-- Header --}}
+    @include('layouts.header')
 
-        {{-- Header --}}
-        @include('layouts.header')
+    {{-- Konten Utama --}}
+    <main class="container mx-auto mt-6">
+        <div class="w-full max-w-2xl mx-auto">
+            @yield('content')
+        </div>
+    </main>
 
-        {{-- Konten Utama --}}
-        <main class="container mx-auto mt-6">
-            <div class="w-full max-w-2xl mx-auto">
-                @yield('content')
-            </div>
-        </main>
-
-        {{-- Footer --}}
-        @include('layouts.footer')
+    {{-- Footer --}}
+    @include('layouts.footer')
 
     </div>
 </body>
