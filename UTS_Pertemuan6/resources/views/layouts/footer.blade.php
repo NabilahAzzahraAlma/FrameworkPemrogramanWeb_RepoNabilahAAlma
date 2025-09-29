@@ -22,12 +22,6 @@
     <footer class="bg-white dark:bg-gray-800 shadow">
         <p class="text-center py-4">© 2025 UTS Laravel Project</p>
     </footer>
-    {{-- 
-    @isset($footer)
-        <footer class="bg-blue dark:bg-gray-900 shadow">
-            <p class="text-center py-4">© 2025 UTS Laravel Project</p>
-        </footer>
-    @endisset --}}
 
     </div>
 </body>
