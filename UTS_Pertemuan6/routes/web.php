@@ -4,14 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-// 1. Membuat route baru dengan URL "uts"
-Route::get('/uts', [App\Http\Controllers\UtsController::class, 'index'])->name('uts.index');
-Route::get('/uts/pemrograman-web', [App\Http\Controllers\UtsController::class, 'pemrogramanWeb'])->name('uts.pemrogramanweb');
-Route::get('/uts/database', [App\Http\Controllers\UtsController::class, 'database'])->
-
-
-    // Route::resource('product', [ProductController::class, 'index']);
-    Route::get(uri: '/product', action: [ProductController::class, 'index']);
+// Route::resource('product', [ProductController::class, 'index']);
+Route::get(uri: '/product', action: [ProductController::class, 'index']);
 
 // 4. Hubungkan middleware, controller, dan view. 
 Route::get('/product/{angka}', [ProductController::class, 'index'])
@@ -39,5 +33,10 @@ Route::get('/rahasia', function (): string {
 Route::get('/admin', function () {
     return 'Halaman Admin';
 })->middleware('rolecheck:admin');
+
+// 1. Membuat route baru dengan URL "uts"
+Route::get('/uts', [App\Http\Controllers\UtsController::class, 'index'])->name('uts.index');
+Route::get('/uts/pemrograman-web', [App\Http\Controllers\UtsController::class, 'pemrogramanWeb'])->name('uts.pemrogramanweb');
+Route::get('/uts/database', [App\Http\Controllers\UtsController::class, 'database'])->name('uts.database');
 
 require __DIR__ . '/auth.php';
