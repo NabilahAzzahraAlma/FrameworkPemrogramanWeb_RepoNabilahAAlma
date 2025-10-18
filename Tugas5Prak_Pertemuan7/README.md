@@ -1,3 +1,104 @@
+# 🚀 Praktikum Framework Pemrograman Web – Pertemuan 7
+
+## 📌 Deskripsi Tugas
+
+Project ini dibuat untuk memenuhi Tugas ke-5 Praktikum Mata Kuliah Framework Pemrograman Web pada pertemuan ketujuh. Materi yang diimplementasikan meliputi:
+
+-   Pembuatan form Master Product untuk menyimpan data ke tabel `products`.
+-   Pengembangan fungsionalitas CRUD (Create, Read, Update, Delete) agar data produk dapat:
+    -   ✅ Ditampilkan dalam bentuk tabel.
+    -   ✅ Diedit jika terjadi kesalahan input.
+    -   ✅ Dihapus jika sudah tidak dibutuhkan.
+-   Penambahan navigasi berbasis dropdown agar fitur CRUD dapat diakses tanpa mengetik URL manual.
+-   Pemisahan proyek tugas dari proyek praktikum untuk menjaga struktur dan fokus pengembangan.
+
+Aplikasi ini dibangun menggunakan Laravel 12.x dan PHP 8.3.16, serta telah disesuaikan dengan instruksi tugas praktikum.
+
+---
+
+## 📂 Struktur Project (Relevan)
+
+Tugas5Prak_Pertemuan7/
+├── app/
+│ ├── Http/
+│ │ ├── Controllers/
+│ │ │ └── ProductController.php (CRUD -nya)
+│ │ └── Middleware/
+│ ├── Models/
+│ │ └── Products.php (Model Products -nya)
+│
+├── resources/
+│ └── views/
+│ └── master-data/
+│ └── product-master/
+│ ├── index.blade.php (tampilkan tabel produk)
+│ ├── create-product.blade.php (form tambah produk)
+│ └── edit-product.blade.php (form edit produk)
+│
+├── routes/
+│ └── web.php (rute CRUD)
+│
+├── database/
+│ ├── migrations/
+│ │ └── 2025_xx_xx_create_products_table.php (struktur tabel)
+│ └── seeders/
+│ └── ProductsSeeder.php (data awal (opsional))
+│
+├── public/
+│ └── index.php
+│
+├── .env
+├── composer.json
+├── package.json
+├── README.md
+└── .gitignore
+
+---
+
+## ⚙️ Implementasi Fitur
+
+-   CRUD Produk:
+
+    -   `index()` → Menampilkan semua produk dalam tabel.
+    -   `create()` → Menampilkan form tambah produk.
+    -   `store()` → Menyimpan data produk ke database.
+    -   `edit()` → Menampilkan form edit produk.
+    -   `update()` → Memperbarui data produk.
+    -   `destroy()` → Menghapus produk dari database.
+
+-   Navigasi:
+
+    -   Dropdown “Data Master” ditambahkan ke layout dashboard.
+    -   Link menuju “Lihat Tabel Produk” dan “Tambah Produk Baru” tersedia di dropdown.
+
+-   Validasi:
+    -   Form menggunakan `@csrf` dan validasi Laravel untuk keamanan dan stabilitas input.
+
+---
+
+## 🖥️ Tampilan Aplikasi
+
+-   Halaman dashboard menampilkan dropdown “Data Master” untuk akses CRUD.
+-   Tabel produk menampilkan semua data yang telah disimpan.
+-   Form edit dan tambah produk menggunakan desain responsif dan validasi input.
+
+---
+
+## 📎 Yang Dikumpulkan
+
+-   ✅ Tautan Repository GitHub – berisi seluruh kode project tugas
+-   ✅ PDF Screenshot Tampilan Projek – menampilkan halaman dashboard, tabel produk, dan form edit
+
+---
+
+## 👩‍💻 Dibuat oleh
+
+-   Nama: Nabilah A Alma
+-   NIM: 2310-035
+-   Mata Kuliah: Framework Pemrograman Web
+-   Pertemuan: 7
+-   Tugas: 5
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -11,13 +112,13 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -35,14 +136,14 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   **[Vehikl](https://vehikl.com)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+-   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+-   **[Redberry](https://redberry.international/laravel-development)**
+-   **[Active Logic](https://activelogic.com)**
 
 ## Contributing
 
