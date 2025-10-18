@@ -1,103 +1,78 @@
-# 🚀 Praktikum Framework Pemrograman Web – Pertemuan 7
+# 🚀 Praktikum Framework Pemrograman Web – Pertemuan 4
 
 ## 📌 Deskripsi Tugas
 
-Project ini dibuat untuk memenuhi Tugas ke-5 Praktikum Mata Kuliah Framework Pemrograman Web pada pertemuan ketujuh. Materi yang diimplementasikan meliputi:
+Project ini dibuat untuk memenuhi tugas Praktikum Mata Kuliah Framework Pemrograman Web pertemuan keempat. Materi yang diimplementasikan meliputi:
 
--   Pembuatan form Master Product untuk menyimpan data ke tabel `products`.
--   Pengembangan fungsionalitas CRUD (Create, Read, Update, Delete) agar data produk dapat:
-    -   ✅ Ditampilkan dalam bentuk tabel.
-    -   ✅ Diedit jika terjadi kesalahan input.
-    -   ✅ Dihapus jika sudah tidak dibutuhkan.
--   Penambahan navigasi berbasis dropdown agar fitur CRUD dapat diakses tanpa mengetik URL manual.
--   Pemisahan proyek tugas dari proyek praktikum untuk menjaga struktur dan fokus pengembangan.
+-   Pembuatan route dinamis `/product/{parameter}` yang menerima angka sebagai parameter.
+-   Penanganan parameter di controller untuk menentukan apakah angka tersebut ganjil atau genap.
+-   Pengiriman data alert ke view dengan tipe `success` untuk genap dan `warning` untuk ganjil.
+-   Pembuatan komponen Blade `<x-alert>` untuk menampilkan pesan dengan styling Bootstrap.
+-   Integrasi komponen ke halaman produk agar alert tampil sesuai tipe dan isi pesan.
 
-Aplikasi ini dibangun menggunakan Laravel 12.x dan PHP 8.3.16, serta telah disesuaikan dengan instruksi tugas praktikum.
+Aplikasi ini menggunakan Laravel 12.x dan PHP 8.3.16, dan telah disesuaikan mengikuti instruksi tugas praktikum.
 
 ---
 
 ## 📂 Struktur Project (Relevan)
 
-Tugas5Prak_Pertemuan7/
+Tugas4Prak_Pertemuan5/
 ├── app/
-│ ├── Http/
-│ │ ├── Controllers/
-│ │ │ └── ProductController.php (CRUD -nya)
-│ │ └── Middleware/
-│ ├── Models/
-│ │ └── Products.php (Model Products -nya)
-│
+│ └── Http/
+│ └── Controllers/
+│ └── ProdukController.php
 ├── resources/
-│ └── views/
-│ └── master-data/
-│ └── product-master/
-│ ├── index.blade.php (tampilkan tabel produk)
-│ ├── create-product.blade.php (form tambah produk)
-│ └── edit-product.blade.php (form edit produk)
-│
+│ └── views/ │
+├── produk.blade.php
+│ └── components/
+│ └── alert.blade.php
 ├── routes/
-│ └── web.php (rute CRUD)
-│
-├── database/
-│ ├── migrations/
-│ │ └── 2025_xx_xx_create_products_table.php (struktur tabel)
-│ └── seeders/
-│ └── ProductsSeeder.php (data awal (opsional))
-│
-├── public/
-│ └── index.php
-│
+│ └── web.php
 ├── .env
-├── composer.json
-├── package.json
-├── README.md
-└── .gitignore
+└── composer.json
 
 ---
 
 ## ⚙️ Implementasi Fitur
 
--   CRUD Produk:
+-   **Route Dinamis**  
+    Route `/product/{angka}` dibuat untuk menerima angka sebagai parameter.
 
-    -   `index()` → Menampilkan semua produk dalam tabel.
-    -   `create()` → Menampilkan form tambah produk.
-    -   `store()` → Menyimpan data produk ke database.
-    -   `edit()` → Menampilkan form edit produk.
-    -   `update()` → Memperbarui data produk.
-    -   `destroy()` → Menghapus produk dari database.
+-   **ProdukController**  
+    Method `show()` memeriksa apakah angka ganjil atau genap, lalu menentukan tipe alert (`warning` atau `success`) dan isi pesan.
 
--   Navigasi:
+-   **Komponen Alert**  
+    Komponen Blade `<x-alert>` dibuat menggunakan `php artisan make:component Alert`, lalu dikustomisasi agar mendukung tipe alert Bootstrap.
 
-    -   Dropdown “Data Master” ditambahkan ke layout dashboard.
-    -   Link menuju “Lihat Tabel Produk” dan “Tambah Produk Baru” tersedia di dropdown.
+-   **View Produk**  
+    Halaman `produk.blade.php` menampilkan komponen `<x-alert>` dengan data yang dikirim dari controller.
 
--   Validasi:
-    -   Form menggunakan `@csrf` dan validasi Laravel untuk keamanan dan stabilitas input.
+-   **Bootstrap Styling**  
+    Tampilan alert menggunakan kelas Bootstrap seperti `alert-warning` dan `alert-success`.
 
 ---
 
 ## 🖥️ Tampilan Aplikasi
 
--   Halaman dashboard menampilkan dropdown “Data Master” untuk akses CRUD.
--   Tabel produk menampilkan semua data yang telah disimpan.
--   Form edit dan tambah produk menggunakan desain responsif dan validasi input.
+-   Halaman `/produk/{angka}` menampilkan alert sesuai nilai parameter:
+    -   Ganjil → alert kuning (`warning`)
+    -   Genap → alert hijau (`success`)
+-   Komponen alert muncul di halaman dengan styling Bootstrap.
 
 ---
 
 ## 📎 Yang Dikumpulkan
 
--   ✅ Tautan Repository GitHub – berisi seluruh kode project tugas
--   ✅ PDF Screenshot Tampilan Projek – menampilkan halaman dashboard, tabel produk, dan form edit
+-   ✅ Tautan Repository GitHub – berisi seluruh kode project
+-   ✅ PDF Screenshot Tampilan Projek
 
 ---
 
 ## 👩‍💻 Dibuat oleh
 
--   Nama: Nabilah A Alma
--   NIM: 2310-035
--   Mata Kuliah: Framework Pemrograman Web
--   Pertemuan: 7
--   Tugas: 5
+-   **Nama**: Nabilah A Alma
+-   **NIM**: 2310-035
+-   **Mata Kuliah**: Framework Pemrograman Web
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
